@@ -11,6 +11,15 @@ if (Meteor.isClient) {
       return false;
     }
   });
+
+  Template.hangup.events({
+    'click .hangupaction' : function(e, t) {
+      console.log("LOL");
+      e.preventDefault();
+      oro.hangup();
+      return false;
+    }
+  });
   
 }
 

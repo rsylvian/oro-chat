@@ -21,3 +21,11 @@
 	width: 70% !important;
 	margin-top: 9px;
 }
+
+#hangupzone {
+	display: none;
+}
+
+#hangupzone button {
+	width: 100%;
+}
