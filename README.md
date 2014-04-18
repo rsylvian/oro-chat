@@ -6,7 +6,7 @@ Simple peer to peer video chat using [meteor.js](https://www.meteor.com/) and [p
 Live example
 ------------
 
-The app is availible for a live example.
+The app is available for a live example.
 [http://orochat.meteor.com](http://orochat.meteor.com)   
 
 If the live example has been shutdown, try the *Local example* below.
@@ -26,4 +26,4 @@ Run oro-chat:
 $ meteor
 ```
 
-The application will be availible on `http://localhost:3000`
+The application will be available on `http://localhost:3000`
