@@ -26,4 +26,4 @@ Run oro-chat:
 $ meteor
 ```
 
-The application will be availible on `http:://localhost:3000`
+The application will be availible on `http://localhost:3000`
