@@ -1,0 +1,23 @@
+ body {
+	padding-top: 60px;
+}
+
+#myvideo, #partnervideo {
+	width: 100%;
+	height: auto;
+}
+
+#videozone {
+	margin-top: 30px;
+}
+
+.keyzone {
+	padding: 10px 20px 10px;
+	color: #FFFFFF;
+	margin: 0px;
+}
+
+.callkey {
+	width: 70% !important;
+	margin-top: 9px;
+}
