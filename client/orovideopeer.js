@@ -1,11 +1,11 @@
-OroPeer = function(){
-	this.peer = new Peer({key: 'hhfk756t8o2prpb9'});
+OroVideoPeer = function() {
+	this.peer = new Peer({key: 'hhfk756t8o2prpb9', debug: 3});
 	this.ui = new Ui();
 	this.currentCall = null;
 	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 };
 
-OroPeer.prototype.getUserVideo = function() {
+OroVideoPeer.prototype.getUserVideo = function() {
 	navigator.getUserMedia({audio: true, video: true}, function(stream){
 		$('#myvideo').prop("src", URL.createObjectURL(stream));
 		window.localStream = stream;
@@ -14,7 +14,7 @@ OroPeer.prototype.getUserVideo = function() {
 	});
 };
 
-OroPeer.prototype.setPartnerVideo = function(call) {
+OroVideoPeer.prototype.setPartnerVideo = function(call) {
 	call.on('stream', function(stream){
       $('#partnervideo').prop("src", URL.createObjectURL(stream));
     });
@@ -23,7 +23,7 @@ OroPeer.prototype.setPartnerVideo = function(call) {
     this.currentCall = call;
 };
 
-OroPeer.prototype.callAKey = function(key) {
+OroVideoPeer.prototype.callAKey = function(key) {
 	var call = this.peer.call(key, window.localStream);
     // if (window.existingCall) {
     //   window.existingCall.close();
@@ -31,7 +31,7 @@ OroPeer.prototype.callAKey = function(key) {
     this.setPartnerVideo(call);
 };
 
-OroPeer.prototype.hangup = function() {
+OroVideoPeer.prototype.hangup = function() {
 
 	console.log("hangup");
 
@@ -41,7 +41,7 @@ OroPeer.prototype.hangup = function() {
     }
 };
 
-OroPeer.prototype.bindOnOpen = function() {
+OroVideoPeer.prototype.bindOnOpen = function() {
 	var that = this;
 	this.peer.on('open', function(id) {
 		$(".key").html(id);
@@ -49,7 +49,7 @@ OroPeer.prototype.bindOnOpen = function() {
 	});
 };
 
-OroPeer.prototype.bindOnCall = function() {
+OroVideoPeer.prototype.bindOnCall = function() {
 	var that = this;
 	this.peer.on('call', function(call) {
 		call.answer(window.localStream);
@@ -57,20 +57,20 @@ OroPeer.prototype.bindOnCall = function() {
     });
 };
 
-OroPeer.prototype.bindOnError = function() {
+OroVideoPeer.prototype.bindOnError = function() {
 	this.peer.on('error', function(err){
 		alert(err.message);
 	});
 };
 
 // never fired ??
-OroPeer.prototype.bindOnClose = function() {
-	this.peer.on('error', function(err){
+OroVideoPeer.prototype.bindOnClose = function() {
+	this.peer.on('close', function(err){
 		this.ui.leaveCall();
 	});
 };
 
-OroPeer.prototype.run = function() {
+OroVideoPeer.prototype.run = function() {
 	this.bindOnOpen();
 	this.bindOnCall();
 	this.bindOnError();

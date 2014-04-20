@@ -5,7 +5,23 @@
 #myvideo, #partnervideo {
 	width: 100%;
 	height: auto;
-	max-height: 700px;
+}
+
+#partnervideo, #myvideo {
+	transform: rotateY(180deg);
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+}
+
+#myvideo {
+	height: 202px;
+	background-color: #000000;
+}
+
+#partnervideo {
+	/*max-height: 700px;*/ /* try for mobile */
+	height: 652px;
+	background-color: #000000;
 }
 
 #videozone {
@@ -18,15 +34,32 @@
 	margin: 0px;
 }
 
-.callkey {
-	width: 70% !important;
+#callzone, #sendmsgzone {
 	margin-top: 9px;
+}
+
+.callaction, .sendmsgaction {
+	margin-left: 0px !important;
 }
 
 #hangupzone {
 	display: none;
+	margin-top: 8px;
+	margin-bottom: 10px;
 }
 
 #hangupzone button {
 	width: 100%;
+}
+
+#chatcontent {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	padding: 7px;
+	height: 358px;
+	overflow: scroll;
+}
+
+#chat {
+	display: none;
 }
