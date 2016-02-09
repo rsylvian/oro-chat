@@ -3,14 +3,6 @@ oro-chat
 
 Simple peer to peer video chat using [meteor.js](https://www.meteor.com/) and [peer.js](http://peerjs.com/).
 
-Live example
-------------
-
-The app is available for a live example.
-[http://orochat.meteor.com](http://orochat.meteor.com)   
-
-If the live example has been shutdown, try the *Local example* below.
-
 Local example
 -------------
 
